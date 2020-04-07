@@ -14,7 +14,7 @@ from utils.logger import Logger
 from net.fcn8 import *
 from net.fcn32 import *
 from utils.visualize import *
-from net.deeplab import*
+from net.deeplabv3 import*
 
 log_name = './log/train_deeplab.log'
 VGG_Weights_path = os.path.expanduser(os.path.join('~', '.keras/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'))
@@ -23,15 +23,16 @@ model_path = './models/deeplab.h5'
 hist_path='./hist/trainHistory_deeplab.txt'
 
 data,label = read_data_path(extension='/list/val.txt')
-data = data[:720]
-label = label[:720]
+data = data
+label = label
 classes = 21
-input_width,input_height=512,512
-input_shape = (512,512,3)
+siz = 224
+input_width,input_height=siz,siz
+input_shape = (input_width,input_height,3)
 #model = FCN8(VGG_Weights_path,classes,input_width,input_height)
-model = Deeplabv3(input_shape=input_shape,classes = classes)
+model = Deeplabv3(input_shape=input_shape,classes = classes,activation='softmax')
 
-#model.load_weights(best_weight_path,by_name=True)
+model.load_weights(best_weight_path,by_name=True)
 model.summary()
 
 X_test,y_test =path2data(data,label,input_width,input_height,input_width,input_height)

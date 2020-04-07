@@ -9,12 +9,11 @@
 import cv2, os
 import numpy as np
 import matplotlib.pyplot as plt
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 from utils.dataloader import *
 from utils.logger import *
 from net.fcn8 import *
-from net.deeplab import *
+from net.deeplabv3 import *
 
 log_name = './log/train_deeplab.log'
 VGG_Weights_path = os.path.expanduser(os.path.join('~', '.keras/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'))
@@ -23,7 +22,7 @@ model_path = './models/deeplab.h5'
 hist_path='./hist/trainHistory_deeplab.txt'
 
 
-siz = 512
+siz = 224
 input_height , input_width = siz,siz
 output_height , output_width = siz,siz
 
@@ -34,10 +33,10 @@ weight_decay = 1e-5
 input_shape = (siz, siz, 3)
 batchnorm_momentum = 0.95
 classes = 21
-BS = 6
+BS = 32
 
 #model = FCN8(VGG_Weights_path,nClasses = classes,input_height = input_height,input_width  = input_width)
-model = Deeplabv3(input_shape=input_shape,classes = classes)
+model = Deeplabv3(input_shape=input_shape,classes = classes,activation='softmax')
 model.summary()
 
 from sklearn.utils import shuffle
@@ -50,14 +49,14 @@ X_train,y_train=read_data_path(extension='/list/train_aug.txt')
 
 print(len(X_train), len(y_train))
 X_test,y_test = read_data_path(extension='/list/val.txt')
-XX_test,yy_test = path2data(X_test[:360],y_test[:360],input_width,input_height,output_width,output_height)
+XX_test,yy_test = path2data(X_test,y_test,input_width,input_height,output_width,output_height)
 
 print(XX_test.shape,yy_test.shape)
 
 # Training data
-#model.load_weights(best_weight_path,by_name=True)
+model.load_weights(best_weight_path,by_name=True)
 #sgd = optimizers.SGD(lr=1e-4, decay=1e-6, momentum=0.9, nesterov=True)
-sgd = optimizers.Adam(lr=1e-4)
+sgd = optimizers.Adam(lr=1e-6)
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
 training_generator=DataGenerator(X_train,y_train,batch_size=BS,input_shape=[input_width,input_height],output_shape=[output_width,output_height])
 
