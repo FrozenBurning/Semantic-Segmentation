@@ -4,7 +4,7 @@
 @Github: https://github.com/FrozenBurning
 @Date: 2020-03-25 20:04:28
 @LastEditors: Zhaoxi Chen
-@LastEditTime: 2020-03-25 22:37:30
+@LastEditTime: 2020-04-08 19:31:02
 '''
 from net.fcn8 import *
 from keras.models import Sequential
@@ -13,6 +13,7 @@ from keras import backend as K
 import six
 from utils.visualize import IoU
 from keras.layers.advanced_activations import LeakyReLU
+from keras.regularizers import l2
 
 class GAN():
     def __init__(self, VGG_Weights_path, opt,n_classes=21, input_width=224, input_height=224):
@@ -23,19 +24,21 @@ class GAN():
         self.discriminator = self._build_discriminator()
         self.generator = self._build_generator()
 
-        self.discriminator.compile(loss='mse',optimizer=opt,metrics=['accuracy'])
+        #self.discriminator.compile(loss='mse',optimizer=opt,metrics=['accuracy'])
+        self.discriminator.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
 
         img_input = Input(shape=(self.input_height, self.input_width, 3))
         label =self.generator(img_input)
         self.discriminator.trainable = False
         validity =self.discriminator(label)
         self.combined = Model(img_input,validity)
-        self.combined.compile(loss='mse',optimizer=opt)
+        #self.combined.compile(loss='mse',optimizer=opt)
+        self.combined.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
 
     def _build_generator(self):
         model = FCN8(VGG_Weights_path=self.vgg_weights_path, nClasses=self.n_classes,
                      input_height=self.input_height, input_width=self.input_width)
-        model.load_weights('./small_fcn8_weights.best.hdf5',by_name=True)
+        #model.load_weights('./small_fcn8_weights.best.hdf5',by_name=True)
         return model
 
     def _build_discriminator(self):
@@ -89,8 +92,11 @@ class GAN():
         x = LeakyReLU(0.2)(x)
         x = Dense(256)(x)
         x = LeakyReLU(0.2)(x)
-
-        validity = Dense(1)(d10)        
+        
+        d10 = Flatten()(d10)
+        d10 = Dense(256,kernel_regularizer=l2(1e-3))(d10)
+        d10 = LeakyReLU(0.2)(d10)
+        validity = Dense(1,activation='sigmoid')(d10)        
         model = Model(img_input, validity)
         model.summary()
         
@@ -106,41 +112,56 @@ class GAN():
         return K.cast_to_floatx(onehot)
 
 
-    def train(self,x_train,y_train,x_val=None,y_val=None,epochs = 100,batch_size = 32,interval = 20):
+    def train(self,x_train,y_train,x_val=None,y_val=None,epochs = 100,batch_size = 32,interval = 1):
         #valid = np.ones((batch_size,self.input_height,self.input_width,1))
         #fake = np.zeros((batch_size,self.input_height,self.input_width,1))
-        #valid = np.ones((batch_size,1))
-        #fake = np.zeros((batch_size,1))
-        valid = np.ones((batch_size,11,11,1))
-        fake = np.zeros((batch_size,11,11,1))
-
+        valid = np.ones((batch_size,1))
+        fake = np.zeros((batch_size,1))
+        #valid = np.ones((batch_size,11,11,1))
+        #fake = np.zeros((batch_size,11,11,1))
+        index =  np.arange(len(x_train))
+        steps = len(x_train)//batch_size
+        maxiou = 0
         for epoch in range(epochs):
-            idx = np.random.randint(0,x_train.shape[0],batch_size)
-            imgs = x_train[idx]
-            real_label = y_train[idx]    
-            # on batch
-            gen_labels = self.generator.predict(imgs)
-            gen_labels = self._onehot_encode(gen_labels,batch_size)            
-            #print(gen_labels.shape)
-            #print(gen_labels[0,0,0,:])
-            #print(real_label.shape)
-            #print(real_label[0,0,0,:])
-
-            d_loss_real = self.discriminator.train_on_batch(real_label,valid)
-            d_loss_fake = self.discriminator.train_on_batch(gen_labels,fake)
-            d_loss = 0.5*np.add(d_loss_real,d_loss_fake)
-
-            g_loss = self.combined.train_on_batch(imgs,valid)
-            
-            print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss))
+            np.random.shuffle(index)
             if epoch % interval == 0:
                 y_pred = self.generator.predict(x_val)
                 y_predi = np.argmax(y_pred,axis=3)
                 y_vali = np.argmax(y_val,axis=3)
-                IoU(y_vali,y_predi)
+                tmp = IoU(y_vali,y_predi)
+                if maxiou < tmp:
+                    maxiou = tmp
+                    self._check_point()
+
+            for batch in range(steps):
+                # idx = np.random.randint(0,x_train.shape[0],batch_size)
+                idx = index[batch*batch_size:(batch+1)*batch_size]
+                imgs = x_train[idx]
+                real_label = y_train[idx]    
+                # on batch
+                gen_labels = self.generator.predict(imgs)
+                gen_labels = self._onehot_encode(gen_labels,batch_size)            
+                #print(gen_labels.shape)
+                #print(gen_labels[0,0,0,:])
+                #print(real_label.shape)
+                #print(real_label[0,0,0,:])
+
+                d_loss_real = self.discriminator.train_on_batch(real_label,valid)
+                d_loss_fake = self.discriminator.train_on_batch(gen_labels,fake)
+                d_loss = 0.5*np.add(d_loss_real,d_loss_fake)
+
+                g_loss = self.combined.train_on_batch(imgs,valid)
+                print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f, acc.: %.2f%%]" % (epoch, d_loss[0], 100*d_loss[1], g_loss[0],100*g_loss[1]))
+
 
     def save_model(self,path):
         self.generator.save(path)
+        self.discriminator.save('discrim_'+path)
 
+    def _check_point(self):
+        print('check point!')
+        self.generator.save('./gan_gen.best.hdf5')
+        self.discriminator.save('./gan_discrim.best.hdf5')
     
         
+

@@ -47,6 +47,7 @@ def IoU(Yi,y_predi):
     mIoU = np.mean(IoUs)
     print("_________________")
     print("Mean IoU: {:4.3f}".format(mIoU))
+    return mIoU
 
 def visualize_prediction(X_test,y_predi,y_testi,nClasses,num=12):
     for i in range(num):

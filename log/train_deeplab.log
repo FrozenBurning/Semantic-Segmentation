@@ -17059,3 +17059,342 @@ Epoch 15/100
 
 Epoch 00015: val_acc improved from 0.89687 to 0.89706, saving model to ./deeplabweights.best.hdf5
 Epoch 16/100
+ - 341s - loss: 0.2525 - acc: 0.9197 - val_loss: 0.2386 - val_acc: 0.8971
+
+Epoch 00016: val_acc improved from 0.89706 to 0.89708, saving model to ./deeplabweights.best.hdf5
+Epoch 17/100
+ - 341s - loss: 0.2521 - acc: 0.9197 - val_loss: 0.2386 - val_acc: 0.8972
+
+Epoch 00017: val_acc improved from 0.89708 to 0.89716, saving model to ./deeplabweights.best.hdf5
+Epoch 18/100
+ - 341s - loss: 0.2508 - acc: 0.9203 - val_loss: 0.2390 - val_acc: 0.8970
+
+Epoch 00018: val_acc did not improve from 0.89716
+Epoch 19/100
+ - 344s - loss: 0.2502 - acc: 0.9205 - val_loss: 0.2391 - val_acc: 0.8971
+
+Epoch 00019: val_acc did not improve from 0.89716
+Epoch 20/100
+ - 339s - loss: 0.2503 - acc: 0.9206 - val_loss: 0.2392 - val_acc: 0.8971
+
+Epoch 00020: val_acc did not improve from 0.89716
+Epoch 21/100
+ - 336s - loss: 0.2497 - acc: 0.9206 - val_loss: 0.2388 - val_acc: 0.8971
+
+Epoch 00021: val_acc did not improve from 0.89716
+Epoch 22/100
+ - 345s - loss: 0.2487 - acc: 0.9210 - val_loss: 0.2388 - val_acc: 0.8973
+
+Epoch 00022: val_acc improved from 0.89716 to 0.89735, saving model to ./deeplabweights.best.hdf5
+Epoch 23/100
+ - 342s - loss: 0.2485 - acc: 0.9209 - val_loss: 0.2385 - val_acc: 0.8974
+
+Epoch 00023: val_acc improved from 0.89735 to 0.89736, saving model to ./deeplabweights.best.hdf5
+Epoch 24/100
+ - 342s - loss: 0.2477 - acc: 0.9211 - val_loss: 0.2386 - val_acc: 0.8973
+
+Epoch 00024: val_acc did not improve from 0.89736
+Epoch 25/100
+ - 341s - loss: 0.2468 - acc: 0.9215 - val_loss: 0.2386 - val_acc: 0.8973
+
+Epoch 00025: val_acc did not improve from 0.89736
+Epoch 26/100
+ - 347s - loss: 0.2467 - acc: 0.9217 - val_loss: 0.2387 - val_acc: 0.8973
+
+Epoch 00026: val_acc did not improve from 0.89736
+Epoch 27/100
+ - 342s - loss: 0.2458 - acc: 0.9215 - val_loss: 0.2385 - val_acc: 0.8975
+
+Epoch 00027: val_acc improved from 0.89736 to 0.89747, saving model to ./deeplabweights.best.hdf5
+Epoch 28/100
+ - 340s - loss: 0.2446 - acc: 0.9221 - val_loss: 0.2382 - val_acc: 0.8977
+
+Epoch 00028: val_acc improved from 0.89747 to 0.89771, saving model to ./deeplabweights.best.hdf5
+Epoch 29/100
+ - 340s - loss: 0.2451 - acc: 0.9221 - val_loss: 0.2382 - val_acc: 0.8977
+
+Epoch 00029: val_acc did not improve from 0.89771
+Epoch 30/100
+ - 341s - loss: 0.2442 - acc: 0.9222 - val_loss: 0.2381 - val_acc: 0.8978
+
+Epoch 00030: val_acc improved from 0.89771 to 0.89775, saving model to ./deeplabweights.best.hdf5
+Epoch 31/100
+ - 340s - loss: 0.2438 - acc: 0.9223 - val_loss: 0.2384 - val_acc: 0.8976
+
+Epoch 00031: val_acc did not improve from 0.89775
+Epoch 32/100
+ - 338s - loss: 0.2437 - acc: 0.9223 - val_loss: 0.2386 - val_acc: 0.8975
+
+Epoch 00032: val_acc did not improve from 0.89775
+Epoch 33/100
+ - 341s - loss: 0.2427 - acc: 0.9226 - val_loss: 0.2382 - val_acc: 0.8978
+
+Epoch 00033: val_acc improved from 0.89775 to 0.89776, saving model to ./deeplabweights.best.hdf5
+Epoch 34/100
+ - 340s - loss: 0.2424 - acc: 0.9229 - val_loss: 0.2383 - val_acc: 0.8977
+
+Epoch 00034: val_acc did not improve from 0.89776
+Epoch 35/100
+ - 338s - loss: 0.2418 - acc: 0.9230 - val_loss: 0.2383 - val_acc: 0.8977
+
+Epoch 00035: val_acc did not improve from 0.89776
+Epoch 36/100
+ - 339s - loss: 0.2414 - acc: 0.9231 - val_loss: 0.2386 - val_acc: 0.8977
+
+Epoch 00036: val_acc did not improve from 0.89776
+Epoch 37/100
+ - 341s - loss: 0.2413 - acc: 0.9230 - val_loss: 0.2382 - val_acc: 0.8977
+
+Epoch 00037: val_acc did not improve from 0.89776
+Epoch 38/100
+ - 340s - loss: 0.2402 - acc: 0.9235 - val_loss: 0.2378 - val_acc: 0.8978
+
+Epoch 00038: val_acc did not improve from 0.89776
+Epoch 39/100
+ - 337s - loss: 0.2391 - acc: 0.9238 - val_loss: 0.2382 - val_acc: 0.8977
+
+Epoch 00039: val_acc did not improve from 0.89776
+Epoch 40/100
+ - 338s - loss: 0.2393 - acc: 0.9237 - val_loss: 0.2378 - val_acc: 0.8978
+
+Epoch 00040: val_acc improved from 0.89776 to 0.89782, saving model to ./deeplabweights.best.hdf5
+Epoch 41/100
+ - 341s - loss: 0.2378 - acc: 0.9241 - val_loss: 0.2377 - val_acc: 0.8979
+
+Epoch 00041: val_acc improved from 0.89782 to 0.89788, saving model to ./deeplabweights.best.hdf5
+Epoch 42/100
+ - 339s - loss: 0.2385 - acc: 0.9240 - val_loss: 0.2381 - val_acc: 0.8980
+
+Epoch 00042: val_acc improved from 0.89788 to 0.89796, saving model to ./deeplabweights.best.hdf5
+Epoch 43/100
+ - 340s - loss: 0.2377 - acc: 0.9242 - val_loss: 0.2386 - val_acc: 0.8979
+
+Epoch 00043: val_acc did not improve from 0.89796
+Epoch 44/100
+ - 342s - loss: 0.2371 - acc: 0.9245 - val_loss: 0.2385 - val_acc: 0.8979
+
+Epoch 00044: val_acc did not improve from 0.89796
+Epoch 45/100
+ - 341s - loss: 0.2363 - acc: 0.9245 - val_loss: 0.2383 - val_acc: 0.8978
+
+Epoch 00045: val_acc did not improve from 0.89796
+Epoch 46/100
+ - 342s - loss: 0.2371 - acc: 0.9245 - val_loss: 0.2384 - val_acc: 0.8978
+
+Epoch 00046: val_acc did not improve from 0.89796
+Epoch 47/100
+ - 340s - loss: 0.2359 - acc: 0.9247 - val_loss: 0.2384 - val_acc: 0.8980
+
+Epoch 00047: val_acc improved from 0.89796 to 0.89799, saving model to ./deeplabweights.best.hdf5
+Epoch 48/100
+ - 339s - loss: 0.2354 - acc: 0.9249 - val_loss: 0.2384 - val_acc: 0.8981
+
+Epoch 00048: val_acc improved from 0.89799 to 0.89808, saving model to ./deeplabweights.best.hdf5
+Epoch 49/100
+ - 334s - loss: 0.2349 - acc: 0.9252 - val_loss: 0.2383 - val_acc: 0.8980
+
+Epoch 00049: val_acc did not improve from 0.89808
+Epoch 50/100
+ - 344s - loss: 0.2345 - acc: 0.9252 - val_loss: 0.2383 - val_acc: 0.8981
+
+Epoch 00050: val_acc improved from 0.89808 to 0.89810, saving model to ./deeplabweights.best.hdf5
+Epoch 51/100
+ - 342s - loss: 0.2339 - acc: 0.9255 - val_loss: 0.2383 - val_acc: 0.8981
+
+Epoch 00051: val_acc improved from 0.89810 to 0.89810, saving model to ./deeplabweights.best.hdf5
+Epoch 52/100
+ - 341s - loss: 0.2331 - acc: 0.9256 - val_loss: 0.2386 - val_acc: 0.8981
+
+Epoch 00052: val_acc did not improve from 0.89810
+Epoch 53/100
+ - 342s - loss: 0.2326 - acc: 0.9258 - val_loss: 0.2389 - val_acc: 0.8980
+
+Epoch 00053: val_acc did not improve from 0.89810
+Epoch 54/100
+ - 343s - loss: 0.2335 - acc: 0.9252 - val_loss: 0.2387 - val_acc: 0.8982
+
+Epoch 00054: val_acc improved from 0.89810 to 0.89816, saving model to ./deeplabweights.best.hdf5
+Epoch 55/100
+ - 341s - loss: 0.2313 - acc: 0.9263 - val_loss: 0.2386 - val_acc: 0.8982
+
+Epoch 00055: val_acc improved from 0.89816 to 0.89820, saving model to ./deeplabweights.best.hdf5
+Epoch 56/100
+ - 343s - loss: 0.2319 - acc: 0.9259 - val_loss: 0.2384 - val_acc: 0.8984
+
+Epoch 00056: val_acc improved from 0.89820 to 0.89840, saving model to ./deeplabweights.best.hdf5
+Epoch 57/100
+ - 347s - loss: 0.2310 - acc: 0.9263 - val_loss: 0.2386 - val_acc: 0.8984
+
+Epoch 00057: val_acc improved from 0.89840 to 0.89843, saving model to ./deeplabweights.best.hdf5
+Epoch 58/100
+ - 341s - loss: 0.2310 - acc: 0.9263 - val_loss: 0.2388 - val_acc: 0.8984
+
+Epoch 00058: val_acc did not improve from 0.89843
+Epoch 59/100
+ - 340s - loss: 0.2305 - acc: 0.9265 - val_loss: 0.2385 - val_acc: 0.8986
+
+Epoch 00059: val_acc improved from 0.89843 to 0.89856, saving model to ./deeplabweights.best.hdf5
+Epoch 60/100
+ - 340s - loss: 0.2303 - acc: 0.9266 - val_loss: 0.2388 - val_acc: 0.8984
+
+Epoch 00060: val_acc did not improve from 0.89856
+Epoch 61/100
+ - 342s - loss: 0.2292 - acc: 0.9269 - val_loss: 0.2388 - val_acc: 0.8984
+
+Epoch 00061: val_acc did not improve from 0.89856
+Epoch 62/100
+ - 342s - loss: 0.2295 - acc: 0.9266 - val_loss: 0.2384 - val_acc: 0.8983
+
+Epoch 00062: val_acc did not improve from 0.89856
+Epoch 63/100
+ - 337s - loss: 0.2290 - acc: 0.9268 - val_loss: 0.2387 - val_acc: 0.8984
+
+Epoch 00063: val_acc did not improve from 0.89856
+Epoch 64/100
+ - 344s - loss: 0.2277 - acc: 0.9273 - val_loss: 0.2388 - val_acc: 0.8984
+
+Epoch 00064: val_acc did not improve from 0.89856
+Epoch 65/100
+ - 338s - loss: 0.2281 - acc: 0.9272 - val_loss: 0.2391 - val_acc: 0.8985
+
+Epoch 00065: val_acc did not improve from 0.89856
+Epoch 66/100
+ - 341s - loss: 0.2268 - acc: 0.9275 - val_loss: 0.2394 - val_acc: 0.8984
+
+Epoch 00066: val_acc did not improve from 0.89856
+Epoch 67/100
+ - 339s - loss: 0.2277 - acc: 0.9272 - val_loss: 0.2390 - val_acc: 0.8983
+
+Epoch 00067: val_acc did not improve from 0.89856
+Epoch 68/100
+ - 340s - loss: 0.2270 - acc: 0.9275 - val_loss: 0.2390 - val_acc: 0.8984
+
+Epoch 00068: val_acc did not improve from 0.89856
+Epoch 69/100
+ - 342s - loss: 0.2265 - acc: 0.9276 - val_loss: 0.2388 - val_acc: 0.8985
+
+Epoch 00069: val_acc did not improve from 0.89856
+Epoch 70/100
+ - 341s - loss: 0.2259 - acc: 0.9277 - val_loss: 0.2391 - val_acc: 0.8986
+
+Epoch 00070: val_acc improved from 0.89856 to 0.89856, saving model to ./deeplabweights.best.hdf5
+Epoch 71/100
+ - 339s - loss: 0.2256 - acc: 0.9279 - val_loss: 0.2391 - val_acc: 0.8987
+
+Epoch 00071: val_acc improved from 0.89856 to 0.89865, saving model to ./deeplabweights.best.hdf5
+Epoch 72/100
+ - 343s - loss: 0.2249 - acc: 0.9282 - val_loss: 0.2388 - val_acc: 0.8986
+
+Epoch 00072: val_acc did not improve from 0.89865
+Epoch 73/100
+ - 341s - loss: 0.2253 - acc: 0.9279 - val_loss: 0.2387 - val_acc: 0.8987
+
+Epoch 00073: val_acc improved from 0.89865 to 0.89875, saving model to ./deeplabweights.best.hdf5
+Epoch 74/100
+ - 342s - loss: 0.2245 - acc: 0.9285 - val_loss: 0.2395 - val_acc: 0.8988
+
+Epoch 00074: val_acc improved from 0.89875 to 0.89878, saving model to ./deeplabweights.best.hdf5
+Epoch 75/100
+ - 345s - loss: 0.2243 - acc: 0.9284 - val_loss: 0.2396 - val_acc: 0.8989
+
+Epoch 00075: val_acc improved from 0.89878 to 0.89888, saving model to ./deeplabweights.best.hdf5
+Epoch 76/100
+ - 340s - loss: 0.2240 - acc: 0.9285 - val_loss: 0.2394 - val_acc: 0.8989
+
+Epoch 00076: val_acc improved from 0.89888 to 0.89892, saving model to ./deeplabweights.best.hdf5
+Epoch 77/100
+ - 343s - loss: 0.2230 - acc: 0.9288 - val_loss: 0.2396 - val_acc: 0.8988
+
+Epoch 00077: val_acc did not improve from 0.89892
+Epoch 78/100
+ - 339s - loss: 0.2229 - acc: 0.9287 - val_loss: 0.2392 - val_acc: 0.8989
+
+Epoch 00078: val_acc did not improve from 0.89892
+Epoch 79/100
+ - 343s - loss: 0.2221 - acc: 0.9289 - val_loss: 0.2393 - val_acc: 0.8989
+
+Epoch 00079: val_acc did not improve from 0.89892
+Epoch 80/100
+ - 336s - loss: 0.2220 - acc: 0.9291 - val_loss: 0.2394 - val_acc: 0.8989
+
+Epoch 00080: val_acc did not improve from 0.89892
+Epoch 81/100
+ - 341s - loss: 0.2217 - acc: 0.9291 - val_loss: 0.2396 - val_acc: 0.8988
+
+Epoch 00081: val_acc did not improve from 0.89892
+Epoch 82/100
+ - 340s - loss: 0.2214 - acc: 0.9291 - val_loss: 0.2405 - val_acc: 0.8987
+
+Epoch 00082: val_acc did not improve from 0.89892
+Epoch 83/100
+ - 337s - loss: 0.2212 - acc: 0.9291 - val_loss: 0.2400 - val_acc: 0.8990
+
+Epoch 00083: val_acc improved from 0.89892 to 0.89902, saving model to ./deeplabweights.best.hdf5
+Epoch 84/100
+ - 342s - loss: 0.2210 - acc: 0.9296 - val_loss: 0.2399 - val_acc: 0.8990
+
+Epoch 00084: val_acc did not improve from 0.89902
+Epoch 85/100
+ - 346s - loss: 0.2206 - acc: 0.9297 - val_loss: 0.2396 - val_acc: 0.8991
+
+Epoch 00085: val_acc improved from 0.89902 to 0.89905, saving model to ./deeplabweights.best.hdf5
+Epoch 86/100
+ - 338s - loss: 0.2198 - acc: 0.9297 - val_loss: 0.2399 - val_acc: 0.8992
+
+Epoch 00086: val_acc improved from 0.89905 to 0.89923, saving model to ./deeplabweights.best.hdf5
+Epoch 87/100
+ - 341s - loss: 0.2197 - acc: 0.9298 - val_loss: 0.2401 - val_acc: 0.8994
+
+Epoch 00087: val_acc improved from 0.89923 to 0.89936, saving model to ./deeplabweights.best.hdf5
+Epoch 88/100
+ - 337s - loss: 0.2193 - acc: 0.9299 - val_loss: 0.2405 - val_acc: 0.8991
+
+Epoch 00088: val_acc did not improve from 0.89936
+Epoch 89/100
+ - 343s - loss: 0.2185 - acc: 0.9301 - val_loss: 0.2405 - val_acc: 0.8991
+
+Epoch 00089: val_acc did not improve from 0.89936
+Epoch 90/100
+ - 343s - loss: 0.2195 - acc: 0.9298 - val_loss: 0.2405 - val_acc: 0.8991
+
+Epoch 00090: val_acc did not improve from 0.89936
+Epoch 91/100
+ - 341s - loss: 0.2180 - acc: 0.9301 - val_loss: 0.2405 - val_acc: 0.8992
+
+Epoch 00091: val_acc did not improve from 0.89936
+Epoch 92/100
+ - 342s - loss: 0.2186 - acc: 0.9301 - val_loss: 0.2404 - val_acc: 0.8992
+
+Epoch 00092: val_acc did not improve from 0.89936
+Epoch 93/100
+ - 339s - loss: 0.2181 - acc: 0.9302 - val_loss: 0.2401 - val_acc: 0.8992
+
+Epoch 00093: val_acc did not improve from 0.89936
+Epoch 94/100
+ - 338s - loss: 0.2178 - acc: 0.9303 - val_loss: 0.2402 - val_acc: 0.8992
+
+Epoch 00094: val_acc did not improve from 0.89936
+Epoch 95/100
+ - 339s - loss: 0.2171 - acc: 0.9306 - val_loss: 0.2410 - val_acc: 0.8992
+
+Epoch 00095: val_acc did not improve from 0.89936
+Epoch 96/100
+ - 344s - loss: 0.2167 - acc: 0.9306 - val_loss: 0.2404 - val_acc: 0.8994
+
+Epoch 00096: val_acc improved from 0.89936 to 0.89939, saving model to ./deeplabweights.best.hdf5
+Epoch 97/100
+ - 348s - loss: 0.2156 - acc: 0.9310 - val_loss: 0.2409 - val_acc: 0.8992
+
+Epoch 00097: val_acc did not improve from 0.89939
+Epoch 98/100
+ - 343s - loss: 0.2163 - acc: 0.9309 - val_loss: 0.2405 - val_acc: 0.8993
+
+Epoch 00098: val_acc did not improve from 0.89939
+Epoch 99/100
+ - 342s - loss: 0.2161 - acc: 0.9308 - val_loss: 0.2406 - val_acc: 0.8992
+
+Epoch 00099: val_acc did not improve from 0.89939
+Epoch 100/100
+ - 341s - loss: 0.2151 - acc: 0.9312 - val_loss: 0.2407 - val_acc: 0.8993
+
+Epoch 00100: val_acc did not improve from 0.89939
