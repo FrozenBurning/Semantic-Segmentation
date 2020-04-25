@@ -20,19 +20,19 @@ from net.gan import *
 from net.fcn8 import *
 from utils.visualize import *
 
-log_name = './log/train_stanford_fcn8_gan.log'
+log_name = './log/train_stanford_fcn8_448_gan.log'
 VGG_Weights_path = os.path.expanduser(os.path.join(
     '~', '.keras/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'))
-best_weight_path = "stanford_fcn8_gan_weights.best.hdf5"
-model_path = './models/stanford_fcn8_gan.h5'
-hist_path = './hist/trainHistory_stanford_fcn8_gan.txt'
+best_weight_path = "stanford_fcn8_448_gan_weights.best.hdf5"
+model_path = './models/stanford_fcn8_448_gan.h5'
+hist_path = './hist/trainHistory_stanford_fcn8_448_gan.txt'
 
-siz = 224
+siz = 448
 input_height, input_width = siz, siz
 output_height, output_width = siz, siz
 
 n_classes = 12
-batch_size = 16
+batch_size = 2
 epochs = 1000
 
 sys.stdout = Logger(log_name, sys.stdout)
@@ -89,7 +89,7 @@ adam = optimizers.Adam(2e-7)
 #historian(hist1.history,hist_path)
 
 gan_model = GAN(VGG_Weights_path, adam, n_classes,input_height=input_height, input_width=input_width)
-gan_model.generator.load_weights('stanford_fcn8_weights.best.hdf5',by_name=True)
+gan_model.generator.load_weights('stanford_fcn8_448_weights.best.hdf5',by_name=True)
 gan_model.train(x_train, y_train, x_val,y_val,epochs=epochs, batch_size=batch_size)
 
 #Evaluate

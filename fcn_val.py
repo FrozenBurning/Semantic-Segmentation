@@ -18,7 +18,7 @@ from net.deeplabv3 import*
 
 log_name = './log/train_deeplab.log'
 VGG_Weights_path = os.path.expanduser(os.path.join('~', '.keras/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'))
-best_weight_path="deeplabweights.best.hdf5"
+best_weight_path="deeplabminibatch.best.hdf5"
 model_path = './models/deeplab.h5'
 hist_path='./hist/trainHistory_deeplab.txt'
 

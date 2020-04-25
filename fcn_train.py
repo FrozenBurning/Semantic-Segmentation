@@ -33,11 +33,11 @@ weight_decay = 1e-5
 input_shape = (siz, siz, 3)
 batchnorm_momentum = 0.95
 classes = 21
-BS = 32
+BS = 16
 
 #model = FCN8(VGG_Weights_path,nClasses = classes,input_height = input_height,input_width  = input_width)
 model = Deeplabv3(input_shape=input_shape,classes = classes,activation='softmax')
-model.summary()
+#model.summary()
 
 from sklearn.utils import shuffle
 from keras.callbacks import ModelCheckpoint
@@ -56,11 +56,11 @@ print(XX_test.shape,yy_test.shape)
 # Training data
 model.load_weights(best_weight_path,by_name=True)
 #sgd = optimizers.SGD(lr=1e-4, decay=1e-6, momentum=0.9, nesterov=True)
-sgd = optimizers.Adam(lr=1e-6)
+sgd = optimizers.Adam(lr=1e-5)
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
 training_generator=DataGenerator(X_train,y_train,batch_size=BS,input_shape=[input_width,input_height],output_shape=[output_width,output_height])
 
-checkpoint = ModelCheckpoint(best_weight_path, monitor='val_acc', verbose=1, save_best_only=True,mode='max')
+checkpoint = ModelCheckpoint('deeplabminibatch.best.hdf5', monitor='val_acc', verbose=1, save_best_only=True,mode='max')
 callbacks_list = [checkpoint]
 hist1 = model.fit_generator(training_generator,validation_data=(XX_test,yy_test),steps_per_epoch=len(X_train)//BS+1,epochs=100,verbose=2,use_multiprocessing=True,callbacks=callbacks_list)
 model.save(model_path)

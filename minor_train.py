@@ -28,19 +28,19 @@ from net.gan import *
 from net.fcn8 import *
 from utils.visualize import *
 
-log_name = './log/train_stanford_fcn8.log'
+log_name = './log/train_stanford_fcn8_448.log'
 VGG_Weights_path = os.path.expanduser(os.path.join(
     '~', '.keras/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'))
-best_weight_path = "stanford_fcn8_weights.best.hdf5"
-model_path = './models/stanford_fcn8.h5'
-hist_path = './hist/trainHistory_stanford_fcn8.txt'
+best_weight_path = "stanford_fcn8_448_weights.best.hdf5"
+model_path = './models/stanford_fcn8_448.h5'
+hist_path = './hist/trainHistory_stanford_fcn8_448.txt'
 
-siz = 224
+siz = 448
 input_height, input_width = siz, siz
 output_height, output_width = siz, siz
 
 n_classes = 12
-batch_size = 8
+batch_size = 4
 epochs = 1000
 
 sys.stdout = Logger(log_name, sys.stdout)
@@ -83,9 +83,10 @@ x_val, y_val = np.array(X) , np.array(Y)
 
 
 adam = optimizers.Adam(0.0002395)
+#adam = optimizers.Adam(2e-5)
 #sgd = optimizers.SGD(lr=0.001,momentum=0.9,decay=1e-5,nesterov=True)
-model = FCN8(VGG_Weights_path,n_classes)
-model.load_weights(best_weight_path,by_name=True)
+model = FCN8(VGG_Weights_path,n_classes,siz,siz)
+#model.load_weights(best_weight_path,by_name=True)
 reduce_lr = ReduceLROnPlateau(monitor='val_loss',patience=10,mode='auto',factor=0.2)
 model.compile(loss='categorical_crossentropy',optimizer=adam,metrics=['accuracy'])
 
